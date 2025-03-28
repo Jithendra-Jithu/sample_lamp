@@ -1,0 +1,12 @@
+- name: Install PHP
+  apt:
+    name:
+      - php
+      - libapache2-mod-php
+      - php-mysql
+    state: present
+
+- name: Deploy Sample PHP Page
+  copy:
+    content: "<?php phpinfo(); ?>"
+    dest: /var/www/html/index.php
